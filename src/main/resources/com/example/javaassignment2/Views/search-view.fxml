@@ -7,26 +7,32 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaassignment2.Controllers.SearchController">
+<AnchorPane prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaassignment2.Controllers.SearchController">
    <children>
       <VBox alignment="CENTER" layoutX="88.0" layoutY="32.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
+            <ImageView fx:id="imageView" fitHeight="227.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </ImageView>
             <Label text="Country Info">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Label>
-            <ComboBox fx:id="comboBox" opacity="0.5" prefWidth="150.0" promptText="Choose a Country">
+            <ComboBox fx:id="comboBox" onAction="#comboBox_OnClick" opacity="0.5" prefWidth="150.0" promptText="Choose a Country">
                <VBox.margin>
                   <Insets bottom="30.0" />
                </VBox.margin>
             </ComboBox>
-            <ImageView fx:id="imageView" fitHeight="215.0" fitWidth="446.0" pickOnBounds="true" preserveRatio="true">
+            <WebView fx:id="webView" prefHeight="348.0" prefWidth="570.0">
                <VBox.margin>
-                  <Insets bottom="10.0" />
+                  <Insets bottom="10.0" left="15.0" right="15.0" />
                </VBox.margin>
-            </ImageView>
+            </WebView>
             <Button fx:id="detailsButton" mnemonicParsing="false" onAction="#detailsButton_onclick" text="Details" />
          </children>
       </VBox>

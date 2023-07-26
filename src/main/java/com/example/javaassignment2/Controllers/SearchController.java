@@ -1,5 +1,7 @@
 package com.example.javaassignment2.Controllers;
 
+import com.example.javaassignment2.Models.ApiResponse;
+import com.example.javaassignment2.Utilities.ApiUtility;
 import com.example.javaassignment2.Utilities.CountryCode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,12 +10,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.web.WebView;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class SearchController implements Initializable {
+
+    @FXML
+    private ImageView imageView;
 
     @FXML
     private Button detailsButton;
@@ -22,11 +29,24 @@ public class SearchController implements Initializable {
     private ComboBox<String> comboBox;
 
     @FXML
-    private ImageView imageView;
+    private WebView webView;
 
     @FXML
     void detailsButton_onclick(ActionEvent event) {
 
+    }
+
+    @FXML
+    void comboBox_OnClick(ActionEvent event) throws IOException, InterruptedException {
+        String countryCode = comboBox.getValue().substring(0, 2);
+//        System.out.println(countryCode);
+        ApiResponse apiResponse = ApiUtility.getCountryData(countryCode);
+        String flagUrl = apiResponse.getData().getFlagImageUri();
+        System.out.println(flagUrl);
+
+        webView.getEngine().load(flagUrl);
+        webView.setZoom(0.6);
+        detailsButton.setVisible(true);
     }
 
     @Override
@@ -36,4 +56,5 @@ public class SearchController implements Initializable {
         ArrayList<String> countryCodes = CountryCode.getCountryCodes("src/main/resources/com/example/javaassignment2/country_code.json");
         comboBox.getItems().addAll(countryCodes);
     }
+
 }

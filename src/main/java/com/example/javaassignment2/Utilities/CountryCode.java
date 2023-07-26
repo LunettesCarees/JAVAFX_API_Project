@@ -19,7 +19,8 @@ public class CountryCode {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 String countryCode = jsonObject.getString("Code");
-                countryCodes.add(countryCode);
+                String countryName = jsonObject.getString("Name");
+                countryCodes.add(countryCode + " - " + countryName);
             }
 
         }catch (Exception e) {
