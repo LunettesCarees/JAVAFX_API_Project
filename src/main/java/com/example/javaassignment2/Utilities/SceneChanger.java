@@ -12,6 +12,7 @@ import java.io.IOException;
 
 public class SceneChanger {
 
+
     // This method changes the scene
     public static void changeScene(ActionEvent event, String fxmlFile, String countryCode) throws IOException, InterruptedException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxmlFile));
@@ -26,4 +27,5 @@ public class SceneChanger {
         stage.setScene(scene);
         stage.show();
     }
+
 }

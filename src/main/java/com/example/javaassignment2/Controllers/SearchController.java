@@ -46,7 +46,6 @@ public class SearchController implements Initializable {
             String flagUrl = apiResponse.getData().getFlagImageUri();
 
             webView.getEngine().load(flagUrl);
-            webView.setZoom(0.6);
 
         } catch (Exception e){
             e.printStackTrace();

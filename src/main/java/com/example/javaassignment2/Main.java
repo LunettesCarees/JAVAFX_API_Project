@@ -14,7 +14,7 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Views/search-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.getIcons().add(new Image("file:src/main/resources/com/example/javaassignment2/icon.png"));
-        stage.setTitle("Country Search!");
+        stage.setTitle("Country Info");
         stage.setScene(scene);
         stage.show();
     }

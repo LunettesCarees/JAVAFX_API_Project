@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<AnchorPane prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaassignment2.Controllers.DetailsController">
+<AnchorPane prefHeight="800.0" prefWidth="600.0" stylesheets="@../Styles/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaassignment2.Controllers.DetailsController">
    <children>
       <VBox alignment="CENTER" layoutX="143.0" layoutY="51.0" prefHeight="800.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -20,7 +20,7 @@
                   <Insets bottom="50.0" />
                </VBox.margin>
             </Label>
-            <GridPane alignment="CENTER" prefHeight="477.0" prefWidth="330.0">
+            <GridPane id="gridPane" alignment="CENTER" prefHeight="477.0" prefWidth="330.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -32,18 +32,46 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Name" />
-                  <Label text="Capital" GridPane.rowIndex="1" />
-                  <Label text="Calling Code" GridPane.rowIndex="2" />
-                  <Label text="Currency" GridPane.rowIndex="3" />
-                  <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" />
-                  <Label fx:id="capitalLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Name">
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Capital" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Calling Code" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Currency" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="capitalLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                  </Label>
                   <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
-                        <ListView fx:id="currencyListView" layoutY="41.0" prefHeight="119.0" prefWidth="250.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                        <ListView fx:id="currencyListView" layoutY="41.0" prefHeight="119.0" prefWidth="250.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="30.0" />
                      </children>
                   </AnchorPane>
-                  <Label fx:id="callingCodeLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="callingCodeLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                  </Label>
                </children>
                <VBox.margin>
                   <Insets bottom="80.0" left="50.0" right="50.0" />

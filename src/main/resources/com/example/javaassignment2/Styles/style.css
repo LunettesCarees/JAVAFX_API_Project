@@ -1,0 +1,44 @@
+.root{
+    -fx-background-color: #bde0fe;
+}
+
+.button{
+    -fx-background-color: #bde0fe;
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+    -fx-cursor: hand;
+}
+
+.label{
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+}
+
+#imageView{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+#webView{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-zoom: 0.6;
+}
+
+.list-view{
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+#gridPane{
+    -fx-border-color: #023047;
+    -fx-border-width: 2px;
+}
+
+#comboBox{
+    -fx-cursor: hand;
+    -fx-background-radius: 5px;
+}
