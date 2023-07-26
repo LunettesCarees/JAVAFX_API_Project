@@ -39,13 +39,17 @@ public class SearchController implements Initializable {
     @FXML
     void comboBox_OnClick(ActionEvent event) throws IOException, InterruptedException {
         String countryCode = comboBox.getValue().substring(0, 2);
-//        System.out.println(countryCode);
-        ApiResponse apiResponse = ApiUtility.getCountryData(countryCode);
-        String flagUrl = apiResponse.getData().getFlagImageUri();
-        System.out.println(flagUrl);
+        try {
+            ApiResponse apiResponse = ApiUtility.getCountryData(countryCode);
+            String flagUrl = apiResponse.getData().getFlagImageUri();
+            System.out.println(flagUrl);
 
-        webView.getEngine().load(flagUrl);
-        webView.setZoom(0.6);
+            webView.getEngine().load(flagUrl);
+            webView.setZoom(0.6);
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
         detailsButton.setVisible(true);
     }
 
