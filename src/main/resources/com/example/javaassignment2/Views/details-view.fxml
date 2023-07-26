@@ -38,8 +38,12 @@
                   <Label text="Currency" GridPane.rowIndex="3" />
                   <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" />
                   <Label fx:id="capitalLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label fx:id="currencyLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <ListView fx:id="callingCodeListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <ListView fx:id="currencyListView" layoutY="41.0" prefHeight="119.0" prefWidth="250.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                     </children>
+                  </AnchorPane>
+                  <Label fx:id="callingCodeLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
                <VBox.margin>
                   <Insets bottom="80.0" left="50.0" right="50.0" />

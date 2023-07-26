@@ -3,6 +3,7 @@ package com.example.javaassignment2.Controllers;
 import com.example.javaassignment2.Models.ApiResponse;
 import com.example.javaassignment2.Utilities.ApiUtility;
 import com.example.javaassignment2.Utilities.CountryCode;
+import com.example.javaassignment2.Utilities.SceneChanger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -32,7 +33,8 @@ public class SearchController implements Initializable {
     private WebView webView;
 
     @FXML
-    void detailsButton_onclick(ActionEvent event) {
+    void detailsButton_onclick(ActionEvent event) throws IOException, InterruptedException {
+        SceneChanger.changeScene(event, "Views/details-view.fxml", comboBox.getValue().substring(0, 2));
 
     }
 
@@ -42,7 +44,6 @@ public class SearchController implements Initializable {
         try {
             ApiResponse apiResponse = ApiUtility.getCountryData(countryCode);
             String flagUrl = apiResponse.getData().getFlagImageUri();
-            System.out.println(flagUrl);
 
             webView.getEngine().load(flagUrl);
             webView.setZoom(0.6);
