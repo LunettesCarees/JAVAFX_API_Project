@@ -5,15 +5,12 @@ import com.example.javaassignment2.Utilities.ApiUtility;
 import com.example.javaassignment2.Utilities.SceneChanger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class DetailsController implements Initializable {
+public class DetailsController {
 
     @FXML
     private Label callingCodeLabel;
@@ -33,6 +30,7 @@ public class DetailsController implements Initializable {
 
     }
 
+    // This method displays the details of the country
     public void showCountryDetails(String countryCode) throws IOException, InterruptedException {
         ApiResponse apiResponse = ApiUtility.getCountryData(countryCode);
         String countryName = apiResponse.getData().getName();
@@ -47,8 +45,5 @@ public class DetailsController implements Initializable {
 
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
 
-    }
 }

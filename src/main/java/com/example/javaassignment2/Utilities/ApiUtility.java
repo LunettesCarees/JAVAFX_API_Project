@@ -20,6 +20,5 @@ public class ApiUtility {
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         Gson gson = new Gson();
         return gson.fromJson(response.body(), ApiResponse.class);
-//        System.out.println(response.body());
     }
 }

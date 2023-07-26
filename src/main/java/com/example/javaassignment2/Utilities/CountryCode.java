@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 public class CountryCode {
 
+    // This method is used to get the country codes from the json file
     public static ArrayList<String> getCountryCodes(String filePath) {
         ArrayList<String> countryCodes = new ArrayList<>();
 
